@@ -1,0 +1,15 @@
+"0","nj_h <- tracts(""NJ"", county=""Hudson"", cb=F)"
+"2","Using FIPS code '34' for state 'NJ'
+"
+"2","Using FIPS code '017' for 'Hudson County'
+"
+"0","nj_h_centroids <-  SpatialPointsDataFrame(gCentroid(nj_h, byid=TRUE), "
+"0","                                          nj_h@data, match.ID=FALSE)"
+"0","nj_h_centroids <- as.data.frame(nj_h_centroids)"
+"0","nj_h_centroids <- select(nj_h_centroids, GEOID, x, y)"
+"0","nj_h_centroids$distance_proj1 <- 0"
+"0","nj_h_centroids$distance_proj2 <- 0"
+"0","for (i in 1:nrow(nj_h_centroids)) {"
+"0","  nj_h_centroids$distance_proj1[i] <- distm (c(40.734330, -74.063644), c(nj_h_centroids$y[i], nj_h_centroids$x[i]), fun = distHaversine)[,1]/ 1609"
+"0","  nj_h_centroids$distance_proj2[i] <- distm (c(40.72, -74.03577), c(nj_h_centroids$y[i], nj_h_centroids$x[i]), fun = distHaversine)[,1]/ 1609"
+"0","}"

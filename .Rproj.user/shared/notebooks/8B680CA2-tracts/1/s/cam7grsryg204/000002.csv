@@ -1,0 +1,4 @@
+"0","sm_table <- hudson_unemployment_sm %>%"
+"0","  group_by(name, radius) %>%"
+"0","  summarize(average_unemployment=mean(un_rate, na.rm=T), median_unemployment=median(un_rate, na.rm=T))"
+"0","datatable(sm_table)"
